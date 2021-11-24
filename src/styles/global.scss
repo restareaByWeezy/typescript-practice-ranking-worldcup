@@ -1,0 +1,53 @@
+.world-cup-container {
+  width: 500px;
+  height: 700px;
+  position: relative;
+  border-radius: 44px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+    position: absolute;
+    font-size: 48px;
+    font-weight: 700;
+    top: 75px;
+    left: 64px;
+  }
+
+  .result {
+    position: absolute;
+    font-size: 32px;
+    font-weight: 500;
+    //(700-32)/2 = 334
+    //32==>box height == font-size
+    top: calc((100% - 32px) / 2);
+  }
+
+  .radio-container {
+    position: absolute;
+    top: 188px;
+    left: 64px;
+    display: flex;
+    flex-direction: column;
+    //요소 사이에만 간격 설정 == gap
+    gap: 30px;
+  }
+
+  .world-cup-button {
+    width: 400px;
+    height: 70px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 54px;
+  }
+}
