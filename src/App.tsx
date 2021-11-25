@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 //자바스크립트 라이브러리 lodash
-import _ from 'lodash'
+import _, { String } from 'lodash'
 import Initial from './components/Initial';
 import FirstRound from './components/FirstRound';
 import SecondRound from './components/SecondRound';
@@ -11,13 +11,14 @@ import './App.css';
 
 interface AppProps {
   step: string;
-  setStep: ()=> void;
-  foods: Array<string>;
-  setFoods: (item: Array<any>)=> void;
+  setStep: (targetStep: string)=> string;
+  foods: string[];
+  setFoods: (item: string[])=> string[];
   retireFood: (index:number)=> void;
+  moveTo : (targetStep: string) => string;
 }
 
-function App () {
+const App: React.FC<AppProps> =  () => {
   // step: 'initial', 'firstRound', 'secondRound', finalRound', 'result'
   const [step, setStep] = useState<string>('initial');
   //foods 배열 state관리
@@ -33,7 +34,7 @@ function App () {
   //초기설정
   useEffect(() => {
     if (step === 'initial') {
-      const initialFoods: Array<string> = ['김밥', '떡볶이', '순대', '라면'];
+      const initialFoods: string[] = ['김밥', '떡볶이', '순대', '라면'];
       //lodash shuffle 함수 이용
       setFoods(_.shuffle(initialFoods));
     }

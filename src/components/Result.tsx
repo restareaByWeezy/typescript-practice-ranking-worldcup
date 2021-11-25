@@ -2,7 +2,7 @@ import React from 'react';
 
 interface ResultProps {
   moveTo: (step: string)=>void;
-  foods: string;
+  foods: string[];
   retireFood: (index:number)=> void;
 }
 

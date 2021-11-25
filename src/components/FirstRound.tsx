@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 interface FirstRoundProps {
   active: number;
-  setActive: () => void;
+  setActive: (index:number) => number;
   moveTo: (step: string)=>void;
-  foods: [];
+  foods: string[];
   retireFood: (index:number)=> void;
 }
 
