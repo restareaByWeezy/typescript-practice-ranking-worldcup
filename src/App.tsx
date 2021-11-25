@@ -13,9 +13,9 @@ interface AppProps {
   step: string;
   setStep: (targetStep: string)=> string;
   foods: string[];
-  setFoods: (item: string[])=> string[];
+  setFoods: (item: string[])=> void;
   retireFood: (index:number)=> void;
-  moveTo : (targetStep: string) => string;
+  moveTo : (targetStep: string) => void;
 }
 
 const App: React.FC<AppProps> =  () => {
